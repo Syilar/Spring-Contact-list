@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create or Edit</title>
+</head>
+<style>
+    * {
+   box-sizing: border-box;
+}
+.decor {
+   position: relative;
+   max-width: 400px;
+   margin: 50px auto 0;
+   background: white;
+   border-radius: 30px;
+   margin-top: 500px;
+}
+
+.form-inner {
+   padding: 50px;
+}
+.form-inner input, .form-inner textarea {
+   display: block;
+   width: 100%;
+   padding: 0 20px;
+   margin-bottom: 10px;
+   background: #E9EFF6;
+   line-height: 40px;
+   border-width: 0;
+   border-radius: 20px;
+   font-family: 'Roboto', sans-serif;
+}
+.form-inner input[type="submit"] {
+   margin-top: 30px;
+   background: #f69a73;
+   border-bottom: 4px solid #d87d56;
+   color: white;
+   font-size: 14px;
+}
+
+</style>
+<body>
+<form th:action="@{/contact/{action}(action=${action})}" method="post" class="decor">
+    <div class="form-inner">
+        <h3>Создание/изменение контакта</h3>
+        <input type="hidden" name="id" th:value="${contact.id}">
+        <input type="text" name="firstName" placeholder="Имя" th:value="${contact.firstName}">
+        <input type="text" name="lastName" placeholder="Фамилия" th:value="${contact.lastName}">
+        <input name="email" placeholder="Email" th:value="${contact.email}">
+        <input name="phone" placeholder="Телефон" th:value="${contact.phone}">
+        <input type="submit" value="Сохранить">
+    </div>
+</form>
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Edit products</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Edit products</h1>-->
+<!--<form th:action="@{/contact/{action}(action=${action})}" method="post">-->
+<!--    <input type="hidden" name="id" th:value="${contact.id}">-->
+<!--    <div>-->
+<!--        <label for="firstName">fName:</label>-->
+<!--        <input type="text" id="firstName" name="firstName" required th:value="${contact.firstName}">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <label for="lastName">lName</label>-->
+<!--        <input type="text" id="lastName" name="lastName" required th:value="${contact.lastName}">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <label for="email">Email:</label>-->
+<!--        <input id="email" name="email" required th:value="${contact.email}">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <label for="phone">Phone:</label>-->
+<!--        <input id="phone" name="phone" required th:value="${contact.phone}">-->
+<!--    </div>-->
+<!--    <button type="submit">Save</button>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
