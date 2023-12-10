@@ -18,7 +18,7 @@ public class DatabaseContactCreator {
 
     private final ContactService contactService;
 
-    @EventListener(ApplicationStartedEvent.class)
+//    @EventListener(ApplicationStartedEvent.class)
     public void createContactData() {
         List<Contact> contactList = new ArrayList<>();
 
